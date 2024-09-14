@@ -1,0 +1,16 @@
+
+[BITS 32]
+[ORG 0x1000]
+
+
+MOV AX, 0x07C0
+MOV DS, AX
+MOV DX, OFFSET msg
+MOV AH, 0x09
+INT 0x21
+
+
+MOV AX, 0x4C00
+INT 0x21
+
+msg DB 'Hello, World!$'
